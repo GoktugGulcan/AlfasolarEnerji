@@ -8332,8 +8332,8 @@ msgstr "Interner Serverfehler"
 
 #: templates/500.html:15
 #, python-format
-msgid "The %(inventree_title)s server raised an internal error"
-msgstr "Der %(inventree_title)s -Server hat einen internen Fehler aufgeworfen"
+msgid "The %(trans 'Alfa Solar Enerji')s server raised an internal error"
+msgstr "Der %(trans 'Alfa Solar Enerji')s -Server hat einen internen Fehler aufgeworfen"
 
 #: templates/500.html:16
 msgid "Refer to the error log in the admin interface for further details"

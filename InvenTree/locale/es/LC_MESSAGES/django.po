@@ -8332,7 +8332,7 @@ msgstr "Error Interno Del Servidor"
 
 #: templates/500.html:15
 #, python-format
-msgid "The %(inventree_title)s server raised an internal error"
+msgid "The %(trans 'Alfa Solar Enerji')s server raised an internal error"
 msgstr ""
 
 #: templates/500.html:16

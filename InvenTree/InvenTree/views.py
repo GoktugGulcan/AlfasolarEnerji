@@ -655,7 +655,7 @@ class AboutView(AjaxView):
     """A view for displaying InvenTree version information"""
 
     ajax_template_name = "about.html"
-    ajax_form_title = _("About InvenTree")
+    ajax_form_title = _("About Alfa Solar")
 
 
 class NotificationsView(TemplateView):

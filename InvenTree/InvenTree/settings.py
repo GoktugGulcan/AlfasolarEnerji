@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 import django.conf.locale
-import django.core.exceptions
+import django.core.exceptions   
 from django.core.validators import URLValidator
 from django.http import Http404
 from django.utils.translation import gettext_lazy as _
@@ -100,7 +100,7 @@ LOGGING = {
 }
 
 # Get a logger instance for this setup file
-logger = logging.getLogger("inventree")
+logger = logging.getLogger("alfasolar")
 
 # Load SECRET_KEY
 SECRET_KEY = config.get_secret_key()
@@ -118,7 +118,7 @@ ALLOWED_HOSTS = get_setting(
     default_value=['*'],
     typecast=list,
 )
-
+DEBUG = False
 # Cross Origin Resource Sharing (CORS) options
 
 # Only allow CORS access to API
@@ -372,7 +372,7 @@ if DEBUG:
     REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'].append('rest_framework.renderers.BrowsableAPIRenderer')
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'InvenTree API',
+    'TITLE': 'ALFASOLAR API',
     'DESCRIPTION': 'API for InvenTree - the intuitive open source inventory management system',
     'LICENSE': {'MIT': 'https://github.com/inventree/InvenTree/blob/master/LICENSE'},
     'EXTERNAL_DOCS': {'docs': 'https://docs.inventree.org', 'web': 'https://inventree.org'},
@@ -651,12 +651,12 @@ _q_worker_timeout = int(get_setting('INVENTREE_BACKGROUND_TIMEOUT', 'background.
 
 # django-q background worker configuration
 Q_CLUSTER = {
-    'name': 'InvenTree',
+    'name': 'alfasolar',
     'label': 'Background Tasks',
-    'workers': int(get_setting('INVENTREE_BACKGROUND_WORKERS', 'background.workers', 4)),
+    'workers': int(get_setting('ALFASOLAR_BACKGROUND_WORKERS', 'background.workers', 4)),
     'timeout': _q_worker_timeout,
     'retry': min(120, _q_worker_timeout + 30),
-    'max_attempts': int(get_setting('INVENTREE_BACKGROUND_MAX_ATTEMPTS', 'background.max_attempts', 5)),
+    'max_attempts': int(get_setting('_BACKGROUND_MAX_ATTEMPTS', 'background.max_attempts', 5)),
     'queue_limit': 50,
     'catch_up': False,
     'bulk': 10,
@@ -792,7 +792,7 @@ EMAIL_HOST = get_setting('INVENTREE_EMAIL_HOST', 'email.host', '')
 EMAIL_PORT = get_setting('INVENTREE_EMAIL_PORT', 'email.port', 25, typecast=int)
 EMAIL_HOST_USER = get_setting('INVENTREE_EMAIL_USERNAME', 'email.username', '')
 EMAIL_HOST_PASSWORD = get_setting('INVENTREE_EMAIL_PASSWORD', 'email.password', '')
-EMAIL_SUBJECT_PREFIX = get_setting('INVENTREE_EMAIL_PREFIX', 'email.prefix', '[InvenTree] ')
+EMAIL_SUBJECT_PREFIX = get_setting('INVENTREE_EMAIL_PREFIX', 'email.prefix', '[Alfa Solar] ')
 EMAIL_USE_TLS = get_boolean_setting('INVENTREE_EMAIL_TLS', 'email.tls', False)
 EMAIL_USE_SSL = get_boolean_setting('INVENTREE_EMAIL_SSL', 'email.ssl', False)
 
