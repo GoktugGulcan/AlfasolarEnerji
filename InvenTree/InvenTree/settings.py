@@ -563,7 +563,7 @@ db_config['TEST'] = {
 
 # Set collation option for mysql test database
 if 'mysql' in db_engine:
-    #db_config['TEST']['COLLATION'] = 'utf8_general_ci'  # pragma: no cover
+    db_config['TEST']['COLLATION'] = 'utf8_general_ci'  # pragma: no cover
 
     db_config = {
     'ENGINE': 'django.db.backends.postgresql',
